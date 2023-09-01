@@ -1,6 +1,6 @@
 #!/bin/bash
 apt update
-apt-get upgrade -y
+apt-get upgrade
 apt install -y git python3 build-essential
 apt install -y ca-certificates curl gnupg
 mkdir -p /etc/apt/keyrings
