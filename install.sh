@@ -1,7 +1,8 @@
 #!/bin/bash
+clear
 apt update
 clear
-apt upgrade
+apt upgrade -y
 apt install -y git python3 build-essential
 apt install -y ca-certificates curl gnupg
 mkdir -p /etc/apt/keyrings
@@ -16,10 +17,12 @@ npm i -y
 npm run setup
 clear
 read -p "Run server now? [y/N]: " response
-if [[ "$response" =~ [Yy] ]] then
+if [[ "$response" =~ [Yy] ]]
+    then
     clear
     npm run start
-elif [[ "$response" =~ [Nn] ]] then
+elif [[ "$response" =~ [Nn] ]]
+    then
     echo "Server not started."
 else
     echo "Invalid input or no response. Server not started."
