@@ -14,6 +14,19 @@ sudo apt install -y nodejs
 git clone https://github.com/spacebarchat/server.git
 cd server
 npm i -y
+read -p "Do you want to install postgres? [y/N]: " response
+if [[ "$response" =~ [Yy] ]]
+    then
+    clear
+    echo "Installing postgres..."
+    npm i pg --save
+elif [[ "$response" =~ [Nn] ]]
+    then
+    clear
+    echo "You've chosen not to install postgres"
+else
+    echo "Postgres will not be installed, you can always install it later with npm i pg --save"
+fi
 npm run setup
 clear
 read -p "Run server now? [y/N]: " response
